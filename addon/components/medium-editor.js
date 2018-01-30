@@ -190,6 +190,12 @@ const MediumEditorComponent = Component.extend({
    */
   _setContent(editor) {
     let value = get(this, 'value');
+    let editorValue = editor.getContent();
+    
+    if(value === editorValue) {
+      return;
+    }
+    
     set(this, '_prevValue', value || '');
 
     editor.saveSelection();
