@@ -6,11 +6,6 @@ module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
     'ember-cli-babel': {
       includePolyfill: true
-    },
-    babel: {
-      plugins: [
-        'transform-object-rest-spread'
-      ]
     }
   });
 

@@ -67,11 +67,5 @@ module.exports = {
       excludeStyles: false,
       theme: 'default'
     }, this.app.options.mediumEditor);
-  },
-
-  options: {
-    babel: {
-      plugins: ['transform-object-rest-spread']
-    }
   }
 };
