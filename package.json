@@ -1,6 +1,6 @@
 {
-  "name": "ember-medium-editor",
-  "version": "1.0.0-beta.1",
+  "name": "ember-medium-editor-fix",
+  "version": "0.0.1",
   "description": "medium-editor for Ember Apps",
   "keywords": [
     "medium-editor",
@@ -54,7 +54,7 @@
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.0.0",
     "ember-maybe-import-regenerator": "^0.1.6",
-    "ember-native-dom-helpers": "^0.3.6",
+    "ember-native-dom-helpers": "^0.6.3",
     "ember-power-select": "^2.0.0-beta.2",
     "ember-resolver": "^4.0.0",
     "ember-router-scroll": "^0.5.0",
@@ -65,9 +65,6 @@
     "eslint-plugin-node": "^6.0.0",
     "loader.js": "^4.2.3",
     "sinon": "^2.1.0"
-  },
-  "engines": {
-    "node": "^4.5 || 6.* || >= 7.*"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
