@@ -40,10 +40,9 @@ export default Component.extend({
   _createOptions() {
     return createOptions(
       get(this, 'options'),
-      {
-        id: get(this, 'childId'),
-        ...getProperties(this, get(this, '_extraOptions'))
-      }
+      Object.assign({
+        id: get(this, 'childId')
+      }, getProperties(this, get(this, '_extraOptions')))
     );
   },
 

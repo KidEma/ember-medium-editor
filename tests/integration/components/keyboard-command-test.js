@@ -26,19 +26,21 @@ module('Integration | Component | keyboard-command', function(hooks) {
     let iteration = 0;
     let expected = [bold, italic, {}];
 
-    this.setProperties({
-      ...bold,
-      registerCommand(cmd) {
-        let expectedCmd = expected[iteration];
+    this.setProperties(Object.assign({},
+      bold,
+      {
+        registerCommand(cmd) {
+          let expectedCmd = expected[iteration];
 
-        expectedCmd.id = cmd.id;
+          expectedCmd.id = cmd.id;
 
-        assert.ok(expectedCmd.id);
-        assert.deepEqual(cmd, expectedCmd);
+          assert.ok(expectedCmd.id);
+          assert.deepEqual(cmd, expectedCmd);
 
-        iteration++;
+          iteration++;
+        }
       }
-    });
+    ));
 
     await render(hbs`
       {{keyboard-command

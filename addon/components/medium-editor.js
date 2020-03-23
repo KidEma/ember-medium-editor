@@ -50,9 +50,15 @@ export default Component.extend({
    * Use didReceiveAttrs hook to listen for props changes and update MediumEditor
    * options.
    */
-  didReceiveAttrs() {
+  init() {
     this._super(...arguments);
     this._scheduleSetupMediumEditor();
+  },
+
+  didUpdateAttrs() {
+    this._super(...arguments);
+    set(this, '_firstRender', true);
+    this._setContent();
   },
 
   /**
@@ -143,10 +149,9 @@ export default Component.extend({
 
   _registerExtension(storage, key, val) {
     let options = getWithDefault(this, storage, {});
-    options = {
-      ...options,
+    options = Object.assign({}, options, {
       [key]: val
-    };
+    });
     set(this, storage, options);
     this._scheduleSetupMediumEditor();
   },
