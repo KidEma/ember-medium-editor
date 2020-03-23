@@ -130,6 +130,8 @@ export default Component.extend({
     let editor = get(this, '_instance');
     let value = get(this, 'value');
     let prevValue = get(this, '_prevValue');
+    
+    set(this, '_prevValue', value || '');
 
     if (value !== prevValue) {
       set(this, '_prevValue', value);
